@@ -91,15 +91,15 @@ export const Container = styled.aside<ContainerProps>`
   }
 
   @media (max-width: 720px) {
-    position: fixed;
-    left: 0;
-    right: 0;
     bottom: 0;
-    z-index: 999;
-    width: 100%;
+    left: 0;
     height: 5rem;;
-    padding: 0 0;
     overflow-y: auto;
+    padding: 0 0;
+    position: fixed;
+    right: 0;
+    width: 100%;
+    z-index: 999;
 
     button {
       display: none;
@@ -109,8 +109,8 @@ export const Container = styled.aside<ContainerProps>`
       height: 100%;
 
       ul {
-        flex-direction: row;
         align-items: center;
+        flex-direction: row;
       }
 
       li {
@@ -119,8 +119,8 @@ export const Container = styled.aside<ContainerProps>`
           padding: 0rem;
 
           svg {
-            width: 3.25rem;
             height: 3.25rem;
+            width: 3.25rem;
           }
 
           span {
