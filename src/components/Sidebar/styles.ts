@@ -1,13 +1,26 @@
-import styled from "styled-components";
+import styled, { css } from 'styled-components'
 
-export const Container = styled.aside`
+interface ContainerProps {
+  isMenuOpen: boolean
+}
+
+export const Container = styled.aside<ContainerProps>`
   align-items: center;
   background-color: ${({ theme }) => theme.colors.red};
   display: flex;
   flex-direction: column;
   overflow: hidden;
   padding: 2rem 0;
-  width: 7.75rem;
+  transition: width 0.3s;
+
+  ${({ isMenuOpen }) =>
+    isMenuOpen
+      ? css`
+          width: 16.3rem;
+        `
+      : css`
+          width: 7.75rem;
+        `}
 
   button {
     background: none;
@@ -64,7 +77,7 @@ export const Container = styled.aside`
             transform: translateY(-50%);
             width: 5px;
           }
-          
+
           svg {
             fill: ${({ theme }) => theme.colors.yellow};
           }
